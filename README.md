@@ -1,14 +1,14 @@
-# optimize-cloud-resource-cost-AWS-
+# Optimizing cloud resource cost on AWS
 Enhancing AWS Cost Efficiency by Managing Stale Resources
 
-## Problem :
-Sometimes, developers create EC2 instances with volumes attached to them by default. For backup purposes, these developers also create snapshots. However, when they no longer need the EC2 instance and decide to terminate it, they sometimes forget to delete the snapshots created for backup. As a result, they continue to incur costs for these unused snapshots, even though they are not actively using them.
+## Problem
+Cloud engineers often create EC2 instances with volumes attached by default. To ensure backup, they also generate snapshots. However, when these EC2 instances are no longer needed and are terminated, the engineers sometimes forget to delete the backup snapshots. Consequently, these unused snapshots continue to incur costs, even though they are no longer in use.
 
-## Solution :
-We're using AWS to save money on storage costs. We made a Smart Lambda function that looks at our snapshots and our EC2 instances. If Lambda finds a snapshot that isn't connected to any active EC2 instances, it deletes it to save us money. This helps us keep our AWS costs down.
+## Solution
+To reduce storage costs, we use AWS and have developed a Smart Lambda function. This Lambda function monitors our snapshots and EC2 instances. If it detects a snapshot that is not associated with any active EC2 instance, it automatically deletes the snapshot, thereby saving us money. This helps in effectively managing and reducing our AWS expenses.
 
-## Note :
-There are many similar problems like this. For instance, we might attach an Elastic IP to our EC2 instance but forget to delete the Elastic IP after terminating the EC2 instance. In such a case, the Elastic IP continues to incur costs for us.
+## Note
+There are several similar issues. For example, an Elastic IP might be attached to an EC2 instance but not deleted after the instance is terminated, resulting in unnecessary costs.
 
 ## Steps :
 ### Step 1:
